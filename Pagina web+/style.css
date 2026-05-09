@@ -1,0 +1,88 @@
+
+body{
+    background-color: #FFFFFF;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.nav-link{
+    color: #FFFFFF;
+}
+
+.nabar{
+    background-color: #1470af;
+    color: #FFFFFF;
+    
+}
+
+footer{
+  background-color: #1470af;
+}
+.instagram-icon {
+  height: 20px;
+  width: auto;
+  display: block;
+}
+.footer-social{
+  display: flex;          
+  align-items: center;     
+  justify-content: center;  
+  gap: 8px;  
+}
+
+.Main-2{
+  max-width: 700px;
+  margin: 40px auto; 
+  background-color: #FFFFFF; 
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+.Main-2 p{
+  text-align: justify;
+  line-height: 1.6;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.btn-ocultar {
+    position: absolute;
+    bottom: 20px;
+    right: 70px; /* Un poco más a la izquierda para no tapar la flecha del carrusel */
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.hidden {
+    opacity: 0 !important;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    z-index: 5; /* Flechas siempre visibles */
+}
+.carousel-item {
+    height: auto; /* Ajusta esta altura a lo que necesites */
+    background-color: black;
+}
