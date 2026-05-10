@@ -1,15 +1,17 @@
 
 body{
-    background-color: #FFFFFF;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .nav-link{
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 .nabar{
-    background-color: #1470af;
-    color: #FFFFFF;
+  background-color: #1470af;
+  color: #FFFFFF;
     
 }
 
