@@ -17,6 +17,7 @@ body{
 
 footer{
   background-color: #1470af;
+  width: 100%;
 }
 .instagram-icon {
   height: 20px;
@@ -87,4 +88,8 @@ html {
 .carousel-item {
     height: auto; /* Ajusta esta altura a lo que necesites */
     background-color: black;
+}
+
+.mein{
+  flex: 1;
 }
