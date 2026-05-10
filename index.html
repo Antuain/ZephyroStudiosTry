@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZephyroStudio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Imagenes/Zephyro_Logo_Blanco_PNG.png">
+</head>
+<body>
+<header>
+<nav class="navbar navbar-expand-lg nabar">
+  <div class="container-fluid">
+    <img src="Imagenes/Zephyro_Logo_Blanco_PNG.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-center me-2">
+    <a class="navbar-brand" href="index.html" style="color: #ffffff; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">ZephyroStudio</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto"> 
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+
+<main class="container-fluid px-4 my-5">
+  <div id="carruselMultimedia" class="carousel slide" data-bs-ride="false">
+    
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active">
+        <div class="video-container position-relative">
+          <div class="ratio ratio-16x9 vid">
+            <video autoplay muted loop style="object-fit: cover; background: white;">
+              <source src="videos/Marvel Rivals   2026-05-08 13-06-24.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-overlay">
+            <div class="texto-central">
+              <h2>Marvel Rivals</h2>
+              <p>Análisis de gameplay y mecánicas competitivas.</p>
+            </div>
+          </div>
+          <button onclick="toggleTexto(this)" class="btn-ocultar">
+             <i class="fa-solid fa-eye-slash"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="carousel-item">
+        <div class="video-container position-relative">
+          <div class="ratio ratio-16x9">
+            <img src="Imagenes/Copia de Felipe Bazan.jpg" style="object-fit: contain;" alt="Captura de pantalla">
+          </div>
+          <div class="video-overlay">
+            <div class="texto-central">
+              <h2>Diseño de Niveles</h2>
+              <p>Vista detallada del modelado 3D y texturizado.</p>
+            </div>
+          </div>
+          <button onclick="toggleTexto(this)" class="btn-ocultar">
+             <i class="fa-solid fa-eye-slash"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="carousel-item">
+        <div class="video-container position-relative">
+          <div class="ratio ratio-16x9">
+            <img src="Imagenes/Copia de lobizonFinal.jpg" style="object-fit: contain;" alt="Captura de pantalla">
+          </div>
+          <div class="video-overlay">
+            <div class="texto-central">
+              <h2>Diseño de Niveles</h2>
+              <p>Vista detallada del modelado 3D y texturizado.</p>
+            </div>
+          </div>
+          <button onclick="toggleTexto(this)" class="btn-ocultar">
+             <i class="fa-solid fa-eye-slash"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="carousel-item">
+        <div class="video-container position-relative">
+          <div class="ratio ratio-16x9">
+            <img src="Imagenes/Copia de FondoFinal.jpg" style="object-fit: contain;" alt="Captura de pantalla">
+          </div>
+          <div class="video-overlay">
+            <div class="texto-central">
+              <h2>Diseño de Niveles</h2>
+              <p>Vista detallada del modelado 3D y texturizado.</p>
+            </div>
+          </div>
+          <button onclick="toggleTexto(this)" class="btn-ocultar">
+             <i class="fa-solid fa-eye-slash"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carruselMultimedia" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carruselMultimedia" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</main>
+    
+
+<footer class=" text-white pt-4 pb-2 footer " id="Contacto">
+  <div class="container text-center">
+    <div class="row">
+      
+      <div class="col-12">
+        <h5>Contacto</h5>
+        <p class="mb-1">📧  contacto@zephyrostudios.com</p>
+        <div class="footer-social">
+        <img src="Imagenes/instagram_PNG11.png" alt="Logo Instagram" class="instagram-icon">
+        <a class="nav-link" href="https://www.instagram.com/zephyrostudios/?hl=es-la"> zephyrostudios</a>
+        </div>
+        <p>📍 Cordoba, Argentina</p>
+      </div>
+
+    </div>
+    
+    <hr class="bg-dark">
+    
+    <div class="row">
+      <div class="col-12">
+        <p class="small">&copy; 2026 ZephyroStudio</p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="java.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
