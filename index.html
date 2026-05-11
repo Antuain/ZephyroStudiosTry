@@ -39,19 +39,18 @@
       <div class="carousel-item active">
         <div class="video-container position-relative">
           <div class="ratio ratio-16x9 vid">
-            <video autoplay muted loop style="object-fit: cover; background: white;">
-              <source src="videos/Marvel Rivals   2026-05-08 13-06-24.mp4" type="video/mp4">
-            </video>
+              <video id="miVideo" muted loop controls style="object-fit: contain; background: black;">
+                  <source src="videos/Trailer Pueblo Chico 16.9 2.mp4" type="video/mp4">
+                  Tu navegador no soporta videos.
+              </video>
           </div>
-          <div class="video-overlay">
-            <div class="texto-central">
-              <h2>Video Introduccion</h2>
-              <p>Análisis de gameplay y mecánicas competitivas.</p>
-            </div>
+
+          <div id="overlay-text" class="video-overlay">
+              <div class="texto-central">
+                  <h2>Marvel Rivals</h2>
+                  <p>Haz clic en el reproductor para iniciar el video</p>
+              </div>
           </div>
-          <button onclick="toggleTexto(this)" class="btn-ocultar">
-             <i class="fa-solid fa-eye-slash"></i>
-          </button>
         </div>
       </div>
 
@@ -64,7 +63,7 @@
           <div class="video-overlay">
             <div class="texto-central">
               <h2>Felipe Bazan</h2>
-              <p>Vista detallada del modelado 2D</p>
+              <p>Basado en los gauchos de años atras, tiene una apariencia de ser poco amable y de no muchos amigos reflejando un gaucho de campo poco social...</p>
             </div>
           </div>
           <button onclick="toggleTexto(this)" class="btn-ocultar">
@@ -82,7 +81,7 @@
           <div class="video-overlay">
             <div class="texto-central">
               <h2>El Lobizon</h2>
-              <p>Vista detallada del modelado 2D</p>
+              <p>Creado a partir de leyendas y referencias con una apariencia humanoide mezclado con un lobo dando ese toque de humano parcialmente transformado y de estado salvaje, diseñado con tonos apagados para camuflarse en el bosque pero resaltando sus ojos brillosos para dar mas intimidacion...</p>
             </div>
           </div>
           <button onclick="toggleTexto(this)" class="btn-ocultar">
@@ -100,7 +99,7 @@
           <div class="video-overlay">
             <div class="texto-central">
               <h2>Escenario 2D</h2>
-              <p>Vista detallada del modelado 2D y texturizado.</p>
+              <p>Un silencioso bosque de noche diseñado con colores oscuros y apagados para generar inquietud y estado de alerta constante...</p>
             </div>
           </div>
           <button onclick="toggleTexto(this)" class="btn-ocultar">

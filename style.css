@@ -62,12 +62,24 @@ html {
     color: white;
     transition: opacity 0.4s ease;
     z-index: 2;
+    pointer-events: none; 
+}
+.video-container {
+    background-color: #000; 
+    border: 2px solid #333;  
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+video {
+    z-index: 0;
 }
 
 .btn-ocultar {
     position: absolute;
     bottom: 20px;
-    right: 70px; /* Un poco más a la izquierda para no tapar la flecha del carrusel */
+    right: 70px;
     z-index: 10;
     background: rgba(0, 0, 0, 0.5);
     color: white;
@@ -82,11 +94,13 @@ html {
     opacity: 0 !important;
 }
 
-.carousel-control-prev, .carousel-control-next {
-    z-index: 5; /* Flechas siempre visibles */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    z-index: 10;
 }
 .carousel-item {
-    height: auto; /* Ajusta esta altura a lo que necesites */
+    height: auto;
     background-color: black;
 }
 
