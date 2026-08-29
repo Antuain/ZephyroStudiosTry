@@ -3,145 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zephyro Studio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Zephyro Studios</title>
+    <link rel="icon" type="image/jpeg" href="Imagenes/logo.jpg">
+    
+    <!-- Iconos y Estilos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="Imagenes/Zephyro_Logo_Blanco_PNG.png">
 </head>
 <body>
-<header>
-<nav class="navbar navbar-expand-lg nabar">
-  <div class="container-fluid">
-    <img src="Imagenes/Zephyro_Logo_Blanco_PNG.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-center me-2">
-    <a class="navbar-brand" href="index.html" style="color: #ffffff; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Zephyro Studio</a>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto"> 
-        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#Contacto">Contacto</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-</header>
-
-
-<main class="container-fluid px-4 my-5 mein">
-  <div id="carruselMultimedia" class="carousel slide" data-bs-ride="false">
-    
-    <div class="carousel-inner">
-      
-      <div class="carousel-item active">
-        <div class="video-container position-relative">
-          <div class="ratio ratio-16x9 vid">
-              <video id="miVideo" muted loop controls style="object-fit: contain; background: black;">
-                  <source src="videos/Trailer Pueblo Chico 16.9 2.mp4" type="video/mp4">
-                  Tu navegador no soporta videos.
-              </video>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div class="carousel-item">
-        <div class="video-container position-relative">
-          <div class="ratio ratio-16x9">
-            <img src="Imagenes/Copia de Felipe Bazan.jpg" style="object-fit: contain;" alt="Captura de pantalla">
-          </div>
-          <div class="video-overlay">
-            <div class="texto-central">
-              <h2>Felipe Bazan</h2>
-              <p>Basado en los gauchos de años atras, tiene una apariencia de ser poco amable y de no muchos amigos reflejando un gaucho de campo poco social...</p>
+    <header>
+        <div class="container">
+            <div class="logo-wrapper">
+                <img src="Imagenes/logo.jpg" alt="Logo Zephyro Studios" class="logo-img">
+                <p class="logo">Zephyro <span class="color-acento">Studios</span></p>
             </div>
-          </div>
-          <button onclick="toggleTexto(this)" class="btn-ocultar">
-             <i class="fa-solid fa-eye-slash"></i>
-          </button>
+
+            <!-- BOTÓN NUEVO -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- ID NUEVO EN EL NAV -->
+            <nav id="nav-menu">
+                <a href="#Quienes-Somos" class="nav-link">Quiénes Somos</a>
+                <a href="#nuestro-equipo" class="nav-link">Nuestro Equipo</a>
+                <a href="#Juego" class="nav-link">Videojuego</a>
+                <a href="#" id="abrir-contacto" class="nav-link">Contacto</a>
+            </nav>
         </div>
-      </div>
+    </header>
 
+    <main>
+        <section id="hero">
+            <h1>Zephyro Studios</h1>
+        </section>
 
-      <div class="carousel-item">
-        <div class="video-container position-relative">
-          <div class="ratio ratio-16x9">
-            <img src="Imagenes/Copia de lobizonFinal.jpg" style="object-fit: contain;" alt="Captura de pantalla">
-          </div>
-          <div class="video-overlay">
-            <div class="texto-central">
-              <h2>El Lobizon</h2>
-              <p>Creado a partir de leyendas y referencias con una apariencia humanoide mezclado con un lobo dando ese toque de humano parcialmente transformado y de estado salvaje, diseñado con tonos apagados para camuflarse en el bosque pero resaltando sus ojos brillosos para dar mas intimidacion...</p>
+        <section id="Quienes-Somos">
+            <div class="container reveal">
+                <div class="texto">
+                    <h2>¿Quiénes Somos?</h2>
+                    
+                    <p>Somos una empresa de videojuegos en la cual unimos la creatividad y la tecnología. Fusionamos narrativas profundas con mecánicas inmersivas para ofrecer experiencias inolvidables, impulsados por un equipo multidisciplinario.</p>
+                </div>
+                <div class="img-container"><img src="Imagenes/Presentacion.jpg" alt=""></div>
             </div>
-          </div>
-          <button onclick="toggleTexto(this)" class="btn-ocultar">
-             <i class="fa-solid fa-eye-slash"></i>
-          </button>
-        </div>
-      </div>
+        </section>
 
-
-      <div class="carousel-item">
-        <div class="video-container position-relative">
-          <div class="ratio ratio-16x9">
-            <img src="Imagenes/Copia de FondoFinal.jpg" style="object-fit: contain;" alt="Captura de pantalla">
-          </div>
-          <div class="video-overlay">
-            <div class="texto-central">
-              <h2>Escenario 2D</h2>
-              <p>Un silencioso bosque de noche diseñado con colores oscuros y apagados para generar inquietud y estado de alerta constante...</p>
+        <section class="Video">
+            <h2>Mirá el tráiler</h2>
+            <video controls loop autoplay muted src="videos/VideoTrailer.mp4" playsinline></video>
+        </section>
+       
+        <section id="nuestro-equipo">
+            <div class="container reveal">
+                <h2>Nuestro Equipo</h2>
+                <div class="programas">
+                    <div class="carta">
+                        <h3>Game Designers</h3>
+                        <img src="Imagenes/GameDesingner.jpg" alt="">
+                        <p>Diseño de mecánicas, balance y experiencia de juego orientada al terror psicológico.</p>
+                        <button type="button" data-rol="disenadores">info</button>
+                    </div>
+                    <div class="carta">
+                        <h3>Programadores</h3>
+                        <img src="Imagenes/Programacion.jpg" alt="">
+                        <p>Desarrollo de lógica, optimización y mecánicas de supervivencia en motor 3D.</p>
+                        <button type="button" data-rol="programadores">info</button>
+                    </div>
+                    <div class="carta">
+                        <h3>Artistas</h3>
+                        <img src="Imagenes/Artistads.jpg" alt="">
+                        <p>Modelado 3D estilizado, animación y composición con tono analógico retro.</p>
+                        <button type="button" data-rol="artistas">info</button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <button onclick="toggleTexto(this)" class="btn-ocultar">
-             <i class="fa-solid fa-eye-slash"></i>
-          </button>
+        </section>
+       
+        <section id="Juego">
+            <div class="container reveal">
+                <div class="texto">
+                    <h2>Pueblo Chico</h2>
+                    <p>Pueblo Chico es un videojuego de terror psicológico y survival horror en primera persona ambientado en la Córdoba rural de los años 80. El jugador controla a Felipe Bazán, de 35 años, reviviendo sus encuentros juveniles con leyendas del folclore latinoamericano a través de las historias que le relata a un monaguillo en su vejez. Destaca por su jugabilidad de investigación y supervivencia en vulnerabilidad total, acompañada de una estética 3D estilizada de tono analógico retro.</p>
+                </div>
+                <div class="img-container">
+                    <img src="Imagenes/Pueblo-Chico.jpg" alt="Captura del videojuego Pueblo Chico">
+                </div>
+            </div>
+        </section>
+
+        <section id="Demo">
+            <h2>Pueblo Chico</h2>
+            <a href="https://tu-link-del-demo.com" class="btn-demo" target="_blank" rel="noopener noreferrer">Jugar Demo</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="redes-sociales">
+            <a href="https://www.instagram.com/zephyrostudios/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@zephyrostudios" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://x.com/ZephyroStudios" target="_blank" rel="noopener noreferrer" aria-label="X">
+    <i class="fa-brands fa-x-twitter"></i>
+</a>
         </div>
-      </div>
-
-    </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carruselMultimedia" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carruselMultimedia" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-</main>
-    
-
-<footer class=" text-white pt-4 pb-2 footer " id="Contacto">
-  <div class="container text-center">
-    <div class="row">
-      
-      <div class="col-12">
-        <h5>Contacto</h5>
-        <a class="nav-link" href="mailto:contacto@zephyrostudios.com">📧contacto@zephyrostudios.com</a>
-        <div class="footer-social">
-        <img src="Imagenes/instagram_PNG11.png" alt="Logo Instagram" class="instagram-icon">
-        <a class="nav-link" href="https://www.instagram.com/zephyrostudios/?hl=es-la"> zephyrostudios</a>
+        <div class="container">
+            <p>&copy; Zephyro Studios 2026</p>
         </div>
-        <p>📍 Cordoba, Argentina</p>
-      </div>
+    </footer>
 
+    <!-- Modales -->
+    <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-caja">
+            <button class="modal-cerrar" id="modal-cerrar" aria-label="Cerrar modal">&times;</button>
+            <h3 id="modal-titulo"></h3>
+            <p id="modal-texto"></p>
+        </div>
     </div>
-    
-    <hr class="bg-dark">
-    
-    <div class="row">
-      <div class="col-12">
-        <p class="small">&copy; 2026 Zephyro Studio</p>
-      </div>
-    </div>
-  </div>
-</footer>
-    
 
-<script src="java.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <div class="modal-overlay" id="modal-contacto-overlay" role="dialog" aria-modal="true">
+        <div class="modal-caja">
+            <button class="modal-cerrar" id="modal-contacto-cerrar" aria-label="Cerrar modal">&times;</button>
+            <h3>Contacto</h3>
+            <form id="form-contacto" action="https://formspree.io/f/TU_ID_AQUI" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="text" name="apellido" placeholder="Apellido" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <input type="tel" name="numero" placeholder="Número">
+                <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="java.js"></script>
 </body>
 </html>

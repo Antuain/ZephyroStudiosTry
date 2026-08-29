@@ -1,110 +1,556 @@
-
-body{
-  display: flex;
-  flex-direction: column;
-  background-color: #FFFFFF;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-.nav-link{
-  color: #FFFFFF;
+* {
+    box-sizing: border-box;
 }
 
-.nabar{
-  background-color: #1470af;
-  color: #FFFFFF;
-    
-}
-
-footer{
-  background-color: #1470af;
-  width: 100%;
-}
-.instagram-icon {
-  height: 20px;
-  width: auto;
-  display: block;
-}
-.footer-social{
-  display: flex;          
-  align-items: center;     
-  justify-content: center;  
-  gap: 8px;  
-}
-
-.Main-2{
-  max-width: 700px;
-  margin: 40px auto; 
-  background-color: #FFFFFF; 
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-}
-.Main-2 p{
-  text-align: justify;
-  line-height: 1.6;
-}
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    background-color: rgb(33, 33, 33);
 }
 
+body {
+    background: linear-gradient(180deg, rgb(33, 33, 33) 0%, rgb(20, 15, 28) 50%, rgb(33, 33, 33) 100%);
+    font-family: 'Roboto', sans-serif;
+    color: azure;
+    margin: 0;
+    padding-top: 70px; /* Espacio para que el header fijo no tape el inicio */
+}
 
-.video-overlay {
-    position: absolute;
+/* Control responsivo global para imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.color-acento { 
+    color: blueviolet; 
+}
+
+/* Tipografía base */
+h1 { font-size: 3.5em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 1.8em; }
+ul { list-style: none; padding: 0; }
+li { font-size: 1.25em; }
+
+p {
+    font-size: 1.15em;
+    line-height: 1.6;
+    color: rgb(200, 195, 210);
+}
+
+/* Botones */
+button,
+.btn-demo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: aliceblue;
+    text-decoration: none;
+    border: none;
+    font-size: 1.1em;
+    padding: 12px 24px;
+    background-color: rgba(72, 7, 94, 0.93);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+button:hover,
+.btn-demo:hover {
+    background-color: rgb(107, 3, 158);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+    transform: translateY(-2px);
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+    padding: 0 20px;        
+}
+
+/* ==========================================
+   HEADER Y MENÚ HAMBURGUESA RESPONSIVO
+   ========================================== */
+header {
+    background-color: rgb(33, 33, 33);
+    color: azure;
+    z-index: 100;
+    width: 100%;
+    position: fixed;
     top: 0;
     left: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.logo {
+    margin: 0;
+    font-weight: bold;
+    color: blueviolet;
+    font-size: 1.5em;
+}
+
+/* Botón Hamburguesa para móviles */
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 8px;
+    box-shadow: none;
+    border-radius: 6px;
+}
+
+.menu-toggle:hover {
+    background: none;
+    color: blueviolet;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Menú colapsado en pantallas móviles (oculto por defecto) */
+header nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
-    height: 100%;
+    background-color: rgb(24, 20, 30);
+    padding: 20px 0;
+    gap: 15px;
+    text-align: center;
+    border-bottom: 2px solid blueviolet;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Clase que activa JavaScript al abrir el menú */
+header nav.menu-abierto {
+    display: flex;
+}
+
+header a {
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    color: azure;
+    transition: color 0.3s ease;
+}
+
+header a:hover,
+header a.activo {
+    color: blueviolet;
+}
+
+/* ==========================================
+   SECCIONES PRINCIPALES
+   ========================================== */
+
+/* Hero */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    min-height: 80vh;
+    color: white;
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("Imagenes/PantallaPrincipal.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1 {
+    color: white;
+    margin: 0;
+}
+
+/* Títulos H2 con línea acentuada */
+h2 {
+    font-size: 2.4em;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: blueviolet;
+    border-radius: 2px;
+}
+
+/* Quiénes Somos */
+#Quienes-Somos {
+    background-color: rgb(33, 33, 33);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+    text-align: center;
+}
+
+#Quienes-Somos::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(138,43,226,0.25) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+#Quienes-Somos .container {
+    position: relative;
+    z-index: 1;
+}
+
+#Quienes-Somos .img-container,
+#Juego .img-container {
+    width: 100%;
+    max-width: 550px;
+    height: 350px;
+    margin: 30px auto 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 35px rgba(138, 43, 226, 0.25);
+    transition: transform 0.4s ease;
+}
+
+#Quienes-Somos .img-container:hover,
+#Juego .img-container:hover {
+    transform: scale(1.02);
+}
+
+/* Ajuste exacto para que las imágenes de Quiénes Somos y Pueblo Chico no se desborden */
+#Quienes-Somos .img-container img,
+#Juego .img-container img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Video */
+.Video {
+    background-color: rgb(24, 20, 30);
+    text-align: center;
+    padding: 80px 0;
+}
+
+.Video video {
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 20px auto 0;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Nuestro Equipo */
+#nuestro-equipo {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+}
+
+#nuestro-equipo .programas {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 30px;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    transition: opacity 0.4s ease;
-    z-index: 2;
-    pointer-events: none; 
+    margin-top: 40px;
 }
-.video-container {
-    background-color: #000; 
-    border: 2px solid #333;  
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border-radius: 8px;
+
+#nuestro-equipo .carta {
+    background-color: rgb(22, 20, 26);
+    width: 100%;
+    max-width: 360px;
+    border-radius: 15px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-video {
-    z-index: 0;
+#nuestro-equipo .carta img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
 }
 
-.btn-ocultar {
-    position: absolute;
-    bottom: 20px;
-    right: 70px;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.5);
+#nuestro-equipo .carta h3 {
+    font-size: 1.5em;
+    margin: 15px 0 10px;
+}
+
+#nuestro-equipo .carta p {
+    font-size: 0.95em;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+#nuestro-equipo .carta button {
+    padding: 8px 22px;
+    font-size: 0.95em;
+}
+
+/* Juego */
+#Juego {
+    background-color: rgb(33, 33, 33);
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Demo */
+#Demo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 100px 20px;
+    gap: 20px;
+}
+
+#Demo h2 {
+    font-size: 3em;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background-color: rgb(25, 25, 25);
+    padding-top: 40px;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.redes-sociales a {
+    color: rgb(150, 150, 150);
+    font-size: 2.2em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: blueviolet;
+    transform: scale(1.15);
+}
+
+footer p {
+    margin: 0;
+    padding: 30px 12px;
+    text-align: center;
+    color: rgb(120, 120, 120);
+}
+
+/* ==========================================
+   MODALES
+   ========================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-overlay.activo {
+    display: flex;
+}
+
+.modal-caja {
+    position: relative;
+    background: rgb(30, 30, 30);
     color: white;
-    border: 1px solid white;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    max-width: 480px;
+    width: 100%;
+    padding: 35px 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid blueviolet;
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
     cursor: pointer;
-    pointer-events: auto;
+    padding: 0;
+    display: block;
 }
 
-.hidden {
-    opacity: 0 !important;
+.modal-caja h3 {
+    margin-top: 0;
+    color: blueviolet;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-    width: 5%;
-    z-index: 10;
-}
-.carousel-item {
-    height: auto;
-    background-color: black;
+.modal-caja form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
 }
 
-.mein{
-  flex: 1;
+.modal-caja input,
+.modal-caja textarea {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    font-family: inherit;
+    font-size: 1em;
+    background-color: rgb(45, 45, 45);
+    color: white;
+    resize: none;
+}
+
+.modal-caja input:focus,
+.modal-caja textarea:focus {
+    outline: none;
+    border-color: blueviolet;
+    box-shadow: 0 0 8px rgba(138, 43, 226, 0.5);
+}
+
+.modal-caja form button {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Animaciones Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   VISTA ESCRITORIO (A partir de 768px)
+   ========================================== */
+@media (min-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+
+    /* Ocultar botón hamburguesa y mostrar menú horizontal */
+    .menu-toggle {
+        display: none;
+    }
+
+    header nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        width: auto;
+        gap: 20px;
+    }
+
+    #hero h1 {
+        font-size: 4.8em;
+    }
+
+    #Quienes-Somos,
+    #Juego {
+        text-align: left;
+    }
+
+    #Quienes-Somos h2::after,
+    #Juego h2::after {
+        left: 0;
+        transform: none;
+    }
+
+    #Quienes-Somos .container,
+    #Juego .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    #Quienes-Somos .texto,
+    #Juego .texto {
+        flex: 1;
+    }
+
+    #Quienes-Somos .img-container,
+    #Juego .img-container {
+        flex: 1;
+        margin: 0;
+        height: 380px;
+    }
+
+    #nuestro-equipo .programas {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    #nuestro-equipo .carta {
+        flex: 1 1 300px;
+        max-width: 350px;
+    }
+
+    #Demo h2 {
+        font-size: 4.5em;
+    }
 }
