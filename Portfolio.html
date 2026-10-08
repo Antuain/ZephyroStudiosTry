@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Zephyro Studios</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tu CSS general -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-wrapper">
+                <img src="Imagenes/logo.jpg" alt="Logo Zephyro Studios" class="logo-img">
+                <p class="logo">Zephyro <span class="color-acento">Studios</span></p>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav id="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="#showreel" class="nav-link">Showreel</a>
+                <a href="#juegos" class="nav-link">Nuestros Juegos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero / Presentación mínima -->
+    <section id="hero" style="min-height: 45vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 20px;">
+        <h1>Nuestros <span class="color-acento">Juegos</span></h1>
+        <p style="max-width: 600px; margin-top: 10px;">Un vistazo a los proyectos y experiencias interactivas que desarrollamos en Zephyro Studios.</p>
+    </section>
+
+    <!-- Video Showreel (Rejunte de todos los juegos) -->
+    <section id="showreel" class="reveal" style="padding: 50px 0; background-color: rgb(24, 20, 30); text-align: center;">
+        <div class="container">
+            <h2 style="margin-bottom: 25px;">Showreel <span class="color-acento">2026</span></h2>
+            
+            <div class="Video" style="max-width: 900px; margin: 0 auto; padding: 0; background: none; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <!-- Si el video es local en MP4: -->
+                <video controls playsinline preload="metadata" style="width: 100%; display: block;">
+                    <source src="Videos/Zephyro Trabajos.mp4" type="video/mp4">
+                    Tu navegador no soporta reproducción de video.
+                </video>
+
+                <!-- TIP: Si en vez de archivo local lo suben a YouTube, reemplaza la etiqueta <video> por:
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" frameborder="0" allowfullscreen></iframe>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Juegos para probar/jugar -->
+    <section id="juegos" class="reveal" style="padding: 70px 0; background-color: rgb(30, 30, 30);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Proyectos Disponibles</h2>
+
+            <!-- Grilla limpia de juegos -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto;">
+                
+                <!-- Juego 1 -->
+                <div class="carta" style="display: flex; flex-direction: column; justify-content: space-between; padding: 25px; border-radius: 10px; background-color: #222; text-align: center;">
+                    <div>
+                        <div style="font-size: 2.5em; color: blueviolet; margin-bottom: 15px;">
+                            <i class="fa-solid fa-ghost"></i>
+                        </div>
+                        <h3 style="margin-bottom: 10px;">Easy Cross</h3>
+                        <p style="color: #bbb; font-size: 0.95rem; margin-bottom: 20px;">
+                            Remake del clasico de Atari con graficos actualizados.
+                        </p>
+                    </div>
+                    <div>
+                        <!-- Botón para jugar / descargar -->
+                        <a href="https://bruzexe.itch.io/easy-cross" target="_blank" rel="noopener noreferrer" class="btn-demo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <i class="fa-solid fa-gamepad"></i> Jugar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Juego 2 (Plantilla para duplicar) -->
+                <div class="carta" style="display: flex; flex-direction: column; justify-content: space-between; padding: 25px; border-radius: 10px; background-color: #222; text-align: center;">
+                    <div>
+                        <div style="font-size: 2.5em; color: blueviolet; margin-bottom: 15px;">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <h3 style="margin-bottom: 10px;">Platformer/Jumper</h3>
+                        <p style="color: #bbb; font-size: 0.95rem; margin-bottom: 20px;">
+                            Platformer minimalista de mecanicas simples.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://ulises-piombo.itch.io/platformerulisespiombo" target="_blank" rel="noopener noreferrer" class="btn-demo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <i class="fa-solid fa-gamepad"></i> Jugar 
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Juego 3 (Plantilla para duplicar) -->
+                <div class="carta" style="display: flex; flex-direction: column; justify-content: space-between; padding: 25px; border-radius: 10px; background-color: #222; text-align: center;">
+                    <div>
+                        <div style="font-size: 2.5em; color: blueviolet; margin-bottom: 15px;">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <h3 style="margin-bottom: 10px;">Mind Battle</h3>
+                        <p style="color: #bbb; font-size: 0.95rem; margin-bottom: 20px;">
+                            Juego Web de preguntas y respuestas con mecanicas de trivia clasicas.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://bruze-code.github.io/MindBattle/" target="_blank" rel="noopener noreferrer" class="btn-demo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <i class="fa-solid fa-gamepad"></i> Jugar 
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="carta" style="display: flex; flex-direction: column; justify-content: space-between; padding: 25px; border-radius: 10px; background-color: #222; text-align: center;">
+                    <div>
+                        <div style="font-size: 2.5em; color: blueviolet; margin-bottom: 15px;">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <h3 style="margin-bottom: 10px;">Ultima Trinchera</h3>
+                        <p style="color: #bbb; font-size: 0.95rem; margin-bottom: 20px;">
+                            Top-Down Shooter de tanques por oleadas centrado en mecanicas de pathfinding.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://bruzexe.itch.io/ultima-trinchera" target="_blank" rel="noopener noreferrer" class="btn-demo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <i class="fa-solid fa-gamepad"></i> Jugar 
+                        </a>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="redes-sociales">
+            <a href="https://www.instagram.com/zephyrostudios/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@zephyrostudios" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://x.com/ZephyroStudios" target="_blank" rel="noopener noreferrer" aria-label="X">
+    <i class="fa-brands fa-x-twitter"></i>
+</a>
+        </div>
+        <div class="container">
+            <p>&copy; Zephyro Studios 2026</p>
+        </div>
+    </footer>
+
+    <script src="java.js"></script>
+</body>
+</html>
