@@ -34,6 +34,13 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: Verify compiled dist output
+        run: |
+          touch dist/.nojekyll
+          test -f dist/CNAME
+          grep -q '/assets/' dist/index.html
+          ! grep -q '/src/main.tsx' dist/index.html
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
