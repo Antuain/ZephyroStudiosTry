@@ -1,0 +1,217 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+
+@theme inline {
+  --color-night: var(--zs-night-950);
+  --color-surface: var(--zs-night-850);
+  --color-surface-elevated: var(--zs-night-800);
+  --color-breeze: var(--zs-breeze-400);
+  --color-breeze-soft: var(--zs-breeze-300);
+  --color-fog: var(--zs-fog-100);
+  --color-fog-muted: var(--zs-fog-300);
+  --color-ember: var(--zs-ember-500);
+  --color-ember-hover: var(--zs-ember-400);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-display: var(--zs-font-display);
+  --font-sans: var(--zs-font-sans);
+  --font-mono: var(--zs-font-mono);
+
+  --radius-sm: var(--zs-radius-xs);
+  --radius-md: var(--zs-radius-sm);
+  --radius-lg: var(--zs-radius-md);
+}
+
+@layer base {
+  html {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: var(--zs-font-sans);
+    line-height: var(--leading-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    margin: 0;
+    min-block-size: 100dvh;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--zs-font-display);
+    color: var(--text-primary);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+  }
+
+  :where(a:any-link, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+
+  dialog:modal {
+    overscroll-behavior: contain;
+  }
+
+  dialog::backdrop {
+    overflow: hidden;
+    overscroll-behavior: contain;
+    background-color: color-mix(in oklab, var(--zs-night-950) 86%, transparent);
+    backdrop-filter: blur(6px);
+  }
+}
+
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Textura sutil de grano atmosférico (nunca interfiere con contraste ni Forced Colors) */
+.zs-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.035;
+}
+
+@media (forced-colors: active) {
+  .zs-grain {
+    display: none;
+  }
+}
+
+/* Validación de formularios solo después de interacción (:user-invalid o aria-invalid="true") */
+.zs-field-control:is(:user-invalid, [aria-invalid='true']) {
+  border-color: var(--destructive);
+}
+
+@keyframes zs-breeze-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0.35rem, -0.25rem, 0);
+  }
+}
+
+@keyframes zs-mote-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.16;
+  }
+  50% {
+    transform: translate3d(1.75rem, -1.25rem, 0) scale(1.15);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(-0.75rem, -2.5rem, 0) scale(0.92);
+    opacity: 0.16;
+  }
+}
+
+@keyframes zs-wave-breath {
+  0%,
+  100% {
+    transform: scaleY(0.45);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 0.92;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .zs-drift {
+    animation: zs-breeze-drift var(--duration-drift) var(--ease-drift) infinite;
+  }
+
+  .zs-mote {
+    animation-name: zs-mote-drift;
+    animation-timing-function: var(--ease-drift);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    will-change: transform, opacity;
+  }
+
+  .zs-wave-bar {
+    transform-origin: bottom center;
+    animation: zs-wave-breath 2.8s var(--ease-drift) infinite;
+  }
+
+  [data-paused='true'] .zs-mote,
+  [data-paused='true'] .zs-wave-bar,
+  .zs-wave-bar[data-paused='true'] {
+    animation-play-state: paused;
+  }
+
+  .zs-mark-kinetic .zs-blade-top,
+  .zs-mark-kinetic .zs-blade-bottom {
+    transition: transform var(--duration-breeze) var(--ease-breeze);
+  }
+
+  .group:hover .zs-mark-kinetic .zs-blade-top,
+  .zs-mark-kinetic:hover .zs-blade-top {
+    transform: translate3d(10px, -8px, 0);
+  }
+
+  .group:hover .zs-mark-kinetic .zs-blade-bottom,
+  .zs-mark-kinetic:hover .zs-blade-bottom {
+    transform: translate3d(-10px, 8px, 0);
+  }
+
+  .zs-reveal {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+    transition:
+      opacity var(--duration-breeze) var(--ease-breeze),
+      transform var(--duration-breeze) var(--ease-breeze);
+  }
+
+  .zs-reveal[data-revealed='true'] {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

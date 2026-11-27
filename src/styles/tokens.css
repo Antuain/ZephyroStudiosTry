@@ -1,0 +1,149 @@
+:root {
+  color-scheme: dark;
+
+  /* ==========================================================================
+     TIER 1: Primitivos — Paleta oficial "La Brisa Nocturna"
+     ========================================================================== */
+  --zs-night-950: #0A0F1A;
+  --zs-night-900: #0E1525;
+  --zs-night-850: #131B2E;
+  --zs-night-800: #1A243C;
+
+  --zs-border-subtle: #1D2842;
+  --zs-border-interactive: #587394;
+
+  --zs-breeze-400: #7FA9C7;
+  --zs-breeze-300: #9FC1D9;
+
+  --zs-fog-100: #EAEFF5;
+  --zs-fog-300: #94A6BC;
+
+  --zs-ember-500: #D97736;
+  --zs-ember-400: #E58647;
+  --zs-danger-400: #E06C65;
+
+  /* Tipografía */
+  --zs-font-display: 'Syne', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --zs-font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --zs-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Escala tipográfica fluida (max <= 2.5 * min para soportar zoom 200%) */
+  --text-display: clamp(2.5rem, 1.5rem + 4.2vw, 5.25rem);
+  --text-h1: clamp(2.125rem, 1.4rem + 3vw, 4rem);
+  --text-h2: clamp(1.625rem, 1.2rem + 1.8vw, 2.75rem);
+  --text-h3: clamp(1.25rem, 1.05rem + 0.8vw, 1.75rem);
+  --text-lead: clamp(1.0625rem, 0.98rem + 0.35vw, 1.25rem);
+  --text-body: 1rem;
+  --text-meta: 0.8125rem;
+  --text-eyebrow: 0.75rem;
+
+  --leading-display: 0.98;
+  --leading-heading: 1.1;
+  --leading-body: 1.65;
+  --leading-meta: 1.45;
+
+  --tracking-display: -0.035em;
+  --tracking-heading: -0.025em;
+  --tracking-eyebrow: 0.14em;
+
+  /* Ritmo espacial y layout editorial */
+  --zs-container-max: 76rem;
+  --zs-measure-editorial: 60ch;
+  --zs-section-space: clamp(5.5rem, 11vw, 10.5rem);
+  --zs-gutter: clamp(1.25rem, 3.5vw, 2.5rem);
+
+  /* Radios editoriales contenidos */
+  --zs-radius-xs: 0.125rem;
+  --zs-radius-sm: 0.25rem;
+  --zs-radius-md: 0.375rem;
+
+  /* Movimiento ("La Brisa") */
+  --ease-breeze: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-drift: cubic-bezier(0.37, 0, 0.63, 1);
+  --duration-ember: 180ms;
+  --duration-breeze: 640ms;
+  --duration-drift: 18s;
+
+  /* ==========================================================================
+     TIER 2: Tokens Semánticos
+     ========================================================================== */
+  --bg-canvas: var(--zs-night-950);
+  --bg-surface: var(--zs-night-850);
+  --bg-surface-elevated: var(--zs-night-800);
+
+  --text-primary: var(--zs-fog-100);
+  --text-secondary: var(--zs-fog-300);
+  --text-accent: var(--zs-breeze-400);
+
+  /* #0A0F1A sobre #D97736 garantiza 6.06:1 (WCAG AA) */
+  --cta-bg: var(--zs-ember-500);
+  --cta-bg-hover: var(--zs-ember-400);
+  --cta-fg: var(--zs-night-950);
+
+  --border-hairline: var(--zs-border-subtle);
+  --border-control: var(--zs-border-interactive);
+  --focus-ring: var(--zs-breeze-400);
+
+  /* Mezclas seguras en oklab (evitar oklch con neutros) */
+  --surface-scrim: color-mix(in oklab, var(--zs-night-950) 84%, transparent);
+  --breeze-glow: color-mix(in oklab, var(--zs-breeze-400) 14%, transparent);
+  --ember-glow: color-mix(in oklab, var(--zs-ember-500) 18%, transparent);
+
+  /* ==========================================================================
+     TIER 3: Integración shadcn/ui
+     ========================================================================== */
+  --background: var(--bg-canvas);
+  --foreground: var(--text-primary);
+
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+
+  --popover: var(--bg-surface-elevated);
+  --popover-foreground: var(--text-primary);
+
+  --primary: var(--cta-bg);
+  --primary-foreground: var(--cta-fg);
+
+  --secondary: var(--bg-surface);
+  --secondary-foreground: var(--text-primary);
+
+  --muted: var(--bg-surface);
+  --muted-foreground: var(--text-secondary);
+
+  --accent: var(--zs-breeze-400);
+  --accent-foreground: var(--zs-night-950);
+
+  --destructive: var(--zs-danger-400);
+  --destructive-foreground: var(--zs-night-950);
+
+  --border: var(--border-hairline);
+  --input: var(--border-control);
+  --ring: var(--focus-ring);
+
+  --radius: var(--zs-radius-sm);
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --zs-fog-300: #B9C8DA;
+    --zs-border-subtle: #4B6282;
+    --zs-border-interactive: #7FA9C7;
+  }
+}
+
+@media (forced-colors: active) {
+  :root {
+    --bg-canvas: Canvas;
+    --bg-surface: Canvas;
+    --bg-surface-elevated: Canvas;
+    --text-primary: CanvasText;
+    --text-secondary: CanvasText;
+    --text-accent: LinkText;
+    --cta-bg: ButtonFace;
+    --cta-bg-hover: Highlight;
+    --cta-fg: ButtonText;
+    --border-hairline: CanvasText;
+    --border-control: ButtonText;
+    --focus-ring: Highlight;
+  }
+}
